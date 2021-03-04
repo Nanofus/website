@@ -59,13 +59,16 @@
             list-style-type: "> ";
         }
         li .mouseover {
-            display: none;
+            visibility: hidden;
+            opacity: 0;
             position: absolute;
             top: 0;
             left: 10rem;
+            transition: visibility 0s, opacity 0.1s linear;
         }
         li:hover .mouseover {
-            display: block;
+            visibility: visible;
+            opacity: 1;
         }
         .arrow {
             position: absolute;
@@ -88,6 +91,9 @@
             }
             a:link, a:visited {
                 color: var(--link-dark);
+            }
+            ::selection {
+                color: var(--text-light);
             }
         }
     </style>
