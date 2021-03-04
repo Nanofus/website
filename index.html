@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Ville Talonpoika</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Ville Talonpoika">
+    <meta name="description" content="The personal website of Ville Talonpoika.">
+    <meta name="keywords" content="Web Design, Web Development, Web Developer, Developer, Virtual Reality, Game Development, Game Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300&display=swap" rel="stylesheet"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <style>
+        :root {
+            --text-light: #222;
+            --text-dark: #FFF;
+            --background-light: #FFF;
+            --background-dark: #222;
+            --link-light: #1976d2;
+            --link-dark: #81d4fa;
+            --selection: #FFFF00;
+        }
+        body {
+            font-family: 'Inconsolata', monospace;
+            font-weight: 300;
+            font-size: 1.4rem;
+            background-color: var(--background-light);
+            color: var(--text-light);
+        }
+        main {
+            margin-top: 5rem;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 200;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 200;
+        }
+        a:link, a:visited {
+            color: var(--link-light);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ::selection {
+            background: var(--selection);
+        }
+        li {
+            position: relative;
+            list-style-type: "> ";
+        }
+        li .mouseover {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 10rem;
+        }
+        li:hover .mouseover {
+            display: block;
+        }
+        .arrow {
+            position: absolute;
+            top: 0.5rem;
+            left: -1rem;
+            border: solid var(--text-light);
+            border-width: 0 1px 1px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: var(--background-dark);
+                color: var(--text-dark);
+            }
+            .arrow {
+                border-color: var(--text-dark);
+            }
+            a:link, a:visited {
+                color: var(--link-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Ville Talonpoika</h1>
+        <p>I make things.</p>
+        <h2 title="Projects">My things</h2>
+        <ul>
+            <li>Perikoto<div class="mouseover"><i class="arrow"></i>A virtual reality adventure game for SteamVR devices</div></li>
+            <li><a href="https://ikuturso.fi" target="blank">Ikuturso</a><div class="mouseover"><i class="arrow"></i>I do freelance web design with a business name from Kalevala</div></li>
+            <li><a href="https://github.com/Nanofus/novel.js" target="_blank">Novel.js</a><div class="mouseover"><i class="arrow"></i>A text adventure engine for the web</div></li>
+        </ul>
+        <h2 title="Social media">Me elsewhere</h2>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/villetalonpoika/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/Nanofus" target="blank">GitHub</a></li>
+        </ul>
+    </main>
+</body>
+</html> 
