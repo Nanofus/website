@@ -13,11 +13,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #current-date {
+            font-size: 2rem;
+        }
+    </style>
 </head>
 
 <body>
     <main>
-        <h1 id="current-time"></h1>
+        <h1><span id="current-time"></span> <span id="current-date"></span></h1>
         <h2 title="Projects">Tools</h2>
         <ul>
             <li><a href="https://beta.todoist.com/app/today">Tasks</a></li>
@@ -42,14 +47,24 @@
         }
 
         let startTime = () => {
+
+            // Time
             var today = new Date();
             var h = today.getHours();
             var m = today.getMinutes();
             var s = today.getSeconds();
-            // add a zero in front of numbers<10
             m = checkTime(m);
             s = checkTime(s);
             document.getElementById('current-time').innerHTML = h + ":" + m + ":" + s;
+
+            //Date
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+            today = mm + '/' + dd + '/' + yyyy;
+            document.getElementById('current-date').innerHTML = dd + '.' + mm + '.' + yyyy;
+            
             t = setTimeout(() => {
                 startTime()
             }, 500);
