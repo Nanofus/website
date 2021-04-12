@@ -32,14 +32,14 @@
         </ul>
     </main>
     <script>
-        function checkTime(i) {
+        let checkTime = (i) => {
             if (i < 10) {
                 i = "0" + i;
             }
             return i;
         }
 
-        function startTime() {
+        let startTime = () => {
             var today = new Date();
             var h = today.getHours();
             var m = today.getMinutes();
@@ -48,7 +48,7 @@
             m = checkTime(m);
             s = checkTime(s);
             document.getElementById('current-time').innerHTML = h + ":" + m + ":" + s;
-            t = setTimeout(function () {
+            t = setTimeout(() => {
                 startTime()
             }, 500);
         }
