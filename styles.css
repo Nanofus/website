@@ -40,7 +40,6 @@ a:hover {
 li {
     position: relative;
     list-style-type: "> ";
-    line-height: 1rem;
     transition: line-height 0.3s ease-in-out;
 }
 li .mouseover {
