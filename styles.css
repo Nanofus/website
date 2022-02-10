@@ -1,84 +1,95 @@
 :root {
-    --text-light: #222;
-    --text-dark: #FFF;
-    --background-light: #FFF;
-    --background-dark: #222;
-    --link-light: #1976d2;
-    --link-dark: #81d4fa;
-    --selection: #FFFF00;
+  --text-light: #222;
+  --text-dark: #fff;
+  --background-light: #fff;
+  --background-dark: #222;
+  --link-light: #1976d2;
+  --link-dark: #81d4fa;
+  --selection: #ffff00;
 }
 body {
-    font-family: 'Inconsolata', monospace;
-    font-weight: 300;
-    font-size: 1.4rem;
-    background-color: var(--background-light);
-    color: var(--text-light);
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  font-size: 1.4rem;
+  background-color: var(--background-light);
+  color: var(--text-light);
 }
 main {
-    margin-top: 5rem;
-    margin-left: 10%;
-    margin-right: 10%;
+  margin-top: 5rem;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.flex-container {
+  display: flex;
+}
+.flex-column {
+  flex: 1;
 }
 h1 {
-    font-size: 3rem;
-    font-weight: 200;
+  font-size: 3rem;
+  font-weight: 200;
 }
 h2 {
-    font-size: 2rem;
-    font-weight: 200;
+  font-size: 2rem;
+  font-weight: 200;
 }
-a:link, a:visited {
-    color: var(--link-light);
-    text-decoration: none;
+a:link,
+a:visited {
+  color: var(--link-light);
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 ::selection {
-    background: var(--selection);
+  background: var(--selection);
 }
 li {
-    position: relative;
-    list-style-type: "> ";
-    transition: line-height 0.3s ease-in-out;
+  position: relative;
+  list-style-type: '> ';
+  transition: line-height 0.3s ease-in-out;
 }
 li .mouseover {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 10rem;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 10rem;
 }
 li:hover .mouseover {
-    visibility: visible;
+  visibility: visible;
 }
 .arrow {
-    position: absolute;
-    top: 0.5rem;
-    left: -1rem;
-    border: solid var(--text-light);
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 4px;
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+  position: absolute;
+  top: 0.5rem;
+  left: -1rem;
+  border: solid var(--text-light);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 @media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--background-dark);
-        color: var(--text-dark);
-    }
-    .arrow {
-        border-color: var(--text-dark);
-    }
-    a:link, a:visited {
-        color: var(--link-dark);
-    }
-    ::selection {
-        color: var(--text-light);
-    }
+  body {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+  }
+  .arrow {
+    border-color: var(--text-dark);
+  }
+  a:link,
+  a:visited {
+    color: var(--link-dark);
+  }
+  ::selection {
+    color: var(--text-light);
+  }
 }
 @media only screen and (max-width: 600px) {
-    li {
-        line-height: 2rem;
-    }
+  li {
+    line-height: 2rem;
+  }
+}
+#current-date {
+  font-size: 2rem;
 }
