@@ -94,3 +94,9 @@ li:hover .mouseover {
 #current-date {
   font-size: 2rem;
 }
+
+.login-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
