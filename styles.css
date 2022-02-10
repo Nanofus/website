@@ -21,6 +21,7 @@ main {
 }
 .flex-container {
   display: flex;
+  flex-wrap: wrap;
 }
 .flex-column {
   flex: 1;
