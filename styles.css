@@ -13,6 +13,7 @@ body {
   font-size: 1.4rem;
   background-color: var(--background-light);
   color: var(--text-light);
+  margin: 0;
 }
 main {
   margin-top: 5rem;
@@ -97,6 +98,7 @@ li:hover .mouseover {
 
 .login-button {
   position: absolute;
+  display: block;
+  margin: auto;
   top: 0.5rem;
-  right: 0.5rem;
 }
