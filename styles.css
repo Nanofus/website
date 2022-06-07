@@ -19,6 +19,7 @@ main {
   margin-top: 5rem;
   margin-left: 10%;
   margin-right: 10%;
+  margin-bottom: 3rem;
 }
 .flex-container {
   display: flex;
