@@ -1,8 +1,5 @@
-import { fetchMarkdownPosts } from '$lib/utils';
-
-const siteURL = 'https://talonpoika.me';
-const siteTitle = 'Ville Talonpoika';
-const siteDescription = 'Description';
+import { fetchMarkdownPosts } from "$lib/utils";
+import { config } from "$lib/config";
 
 export const prerender = true;
 
@@ -14,14 +11,14 @@ export const GET = async () => {
   const body = render(sortedPosts);
   const options = {
     headers: {
-      'Cache-Control': 'max-age=0, s-maxage=3600',
-      'Content-Type': 'application/xml',
-    },
+      "Cache-Control": "max-age=0, s-maxage=3600",
+      "Content-Type": "application/xml"
+    }
   };
 
   return new Response(
     body,
-    options,
+    options
   );
 };
 
@@ -29,19 +26,19 @@ const render = (posts: any) => `
   <?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-      <title>${siteTitle}</title>
-      <description>${siteDescription}</description>
-      <link>${siteURL}</link>
-      <atom:link href="${siteURL}/rss.xml" rel="self" type="application/rss+xml"/>
+      <title>${config.siteTitle}</title>
+      <description>${config.siteDescription}</description>
+      <link>${config.siteURL}</link>
+      <atom:link href="${config.siteURL}/rss.xml" rel="self" type="application/rss+xml"/>
       ${posts.map((post: any) => `
       <item>
-        <guid isPermaLink='true'>${siteURL}/blog/${post.path}</guid>
+        <guid isPermaLink="true">${config.siteURL}/blog/${post.path}</guid>
         <title>${post.meta.title}</title>
-        <link>${siteURL}/blog/${post.path}</link>
+        <link>${config.siteURL}/blog/${post.path}</link>
         <description>${post.meta.title}</description>
         <pubDate>${new Date(post.meta.date).toUTCString()}</pubDate>
       </item>
-      `).join('')}
+      `).join("")}
     </channel>
   </rss>
 `;

@@ -1,5 +1,5 @@
 export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
+  const allPostFiles = import.meta.glob('/src/routes/posts/*.md');
   const iterablePostFiles = Object.entries(allPostFiles);
 
   return await Promise.all(

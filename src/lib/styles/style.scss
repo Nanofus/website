@@ -6,33 +6,77 @@
   --link-light: #1976d2;
   --link-dark: #81d4fa;
   --selection: #ffff00;
+  --font: 'Nunito Sans';
+  --font-weight: 400
+}
+
+:where(h2, h3, h4, h5, h6) {
+  .icon-link {
+    position: relative;
+
+    &::before {
+      content: '#';
+      position: absolute;
+      left: -1.5ch;
+      top: 0.25rem;
+      line-height: 1;
+      opacity: 0;
+      text-decoration: underline;
+    }
+  }
+
+  &:hover .icon-link::before {
+    opacity: 1;
+  }
 }
 
 body {
-  font-family: 'Inconsolata', monospace;
-  font-weight: 300;
-  font-size: 1.4rem;
+  font-family: var(--font), -apple-system, sans-serif;
+  font-weight: var(--font-weight);
+  font-size: 1rem;
   background-color: var(--background-light);
   color: var(--text-light);
   margin: auto;
-  max-width: 48rem;
+  max-width: 50ch;
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 main {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 200;
+header {
+  a, a:link, a:visited {
+    color: var(--text-light);
+    text-decoration: none;
+  }
+}
+
+footer {
+  font-size: 0.8rem;
+}
+
+h1, h2, h3 {
   color: var(--text-light);
 }
 
-h2 {
+h1 {
   font-size: 2rem;
-  font-weight: 200;
-  color: var(--text-light);
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 a:link,
@@ -64,17 +108,11 @@ li .mouseover {
 
 li:hover .mouseover {
   visibility: visible;
-}
-
-.arrow {
-  position: absolute;
-  top: 0.5rem;
-  left: -1rem;
-  border: solid var(--text-light);
-  border-width: 0 1px 1px 0;
-  display: inline-block;
-  padding: 4px;
-  transform: rotate(135deg);
+  &::before {
+    position: absolute;
+    left: -1rem;
+    content: '<';
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,10 +120,12 @@ li:hover .mouseover {
     background-color: var(--background-dark);
     color: var(--text-dark);
   }
-  h1 {
-    color: var(--text-dark);
+  header {
+    a, a:link, a:visited {
+      color: var(--text-dark);
+    }
   }
-  h2 {
+  h1, h2, h3 {
     color: var(--text-dark);
   }
   .arrow {
