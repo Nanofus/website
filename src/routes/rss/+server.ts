@@ -32,9 +32,9 @@ const render = (posts: any) => `
       <atom:link href="${config.siteURL}/rss.xml" rel="self" type="application/rss+xml"/>
       ${posts.map((post: any) => `
       <item>
-        <guid isPermaLink="true">${config.siteURL}/blog/${post.path}</guid>
+        <guid isPermaLink="true">${config.siteURL}${post.path}</guid>
         <title>${post.meta.title}</title>
-        <link>${config.siteURL}/blog/${post.path}</link>
+        <link>${config.siteURL}${post.path}</link>
         <description>${post.meta.title}</description>
         <pubDate>${new Date(post.meta.date).toUTCString()}</pubDate>
       </item>
