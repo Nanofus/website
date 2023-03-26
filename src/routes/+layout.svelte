@@ -4,7 +4,7 @@
   import Footer from "$lib/components/Footer.svelte";
   import "$lib/styles/style.scss";
   import "$lib/styles/prism-atom-dark.css";
-  import { fade } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
 
@@ -15,7 +15,7 @@
     el.querySelectorAll("h2").forEach((h2) => {
       //console.log(h2);
     });
-  })
+  });
 
   $: if (browser) {
     preloadCode("/posts", "/posts/*");
@@ -25,7 +25,7 @@
 <Header />
 
 {#key data.currentRoute}
-  <main bind:this={el} in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
+  <main bind:this={el} in:fly="{{ y: 100, duration: 500, delay: 200 }}" out:fade="{{duration: 200}}">
     <slot />
   </main>
 {/key}
