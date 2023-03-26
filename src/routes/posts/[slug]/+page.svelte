@@ -1,12 +1,16 @@
 <script>
+  import { page } from "$app/stores";
   import { config } from "$lib/config";
 
   export let data;
+
 </script>
 
 <svelte:head>
   <title>{config.siteTitle} – {data.title}</title>
-  <meta property="og:title" content={data.title} />
+  <meta property="og:title" content="{config.siteTitle} – {data.title}" />
+  <meta property="og:description" content="Test description" />
+  <meta property="og:url" content={$page.url.href} />
 </svelte:head>
 
 <article>

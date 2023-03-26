@@ -13,7 +13,7 @@
 
   onMount(() => {
     el.querySelectorAll("h2").forEach((h2) => {
-      console.log(h2);
+      //console.log(h2);
     });
   })
 

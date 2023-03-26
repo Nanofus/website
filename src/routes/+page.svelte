@@ -7,6 +7,8 @@
 <svelte:head>
   <title>{config.siteTitle}</title>
   <meta property="og:title" content={config.siteTitle} />
+  <meta property="og:description" content={config.siteDescription} />
+  <meta property="og:url" content={config.siteURL} />
 </svelte:head>
 
 <p>I make things.</p>
