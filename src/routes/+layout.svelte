@@ -11,12 +11,6 @@
   export let data;
   export let el;
 
-  onMount(() => {
-    el.querySelectorAll("h2").forEach((h2) => {
-      //console.log(h2);
-    });
-  });
-
   $: if (browser) {
     preloadCode("/posts", "/posts/*");
   }
@@ -25,7 +19,7 @@
 <Header />
 
 {#key data.currentRoute}
-  <main bind:this={el} in:fly="{{ y: 100, duration: 500, delay: 200 }}" out:fade="{{duration: 200}}">
+  <main in:fly="{{ y: 10, duration: 120, delay: 120 }}" out:fade="{{duration: 120}}">
     <slot />
   </main>
 {/key}

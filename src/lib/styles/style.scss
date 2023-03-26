@@ -30,6 +30,30 @@
   }
 }
 
+[data-animate] {
+  --stagger: 0;
+  --delay: 120ms;
+  --start: 0ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-animate] {
+    animation: enter .6s both;
+    animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
+  }
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 body {
   font-family: var(--font), -apple-system, sans-serif;
   font-weight: var(--font-weight);
@@ -110,6 +134,7 @@ li .mouseover {
 
 li:hover .mouseover {
   visibility: visible;
+
   &::before {
     position: absolute;
     left: -1rem;

@@ -13,10 +13,10 @@
   <meta property="og:type" content="website" />
 </svelte:head>
 
-<p>I make things.</p>
+<p data-animate style="--stagger:1">I make things.</p>
 
-<h2 title="Projects">My things</h2>
-<ul>
+<h2 title="Projects" data-animate style="--stagger:2">My things</h2>
+<ul data-animate style="--stagger:3">
   <li>
     <a href="https://perikoto.com" target="blank">Perikoto</a>
     <div class="mouseover">A virtual reality adventure game for SteamVR devices</div>
@@ -31,8 +31,8 @@
   </li>
 </ul>
 
-<h2 title="Posts">Posts</h2>
-<ul>
+<h2 title="Posts" data-animate style="--stagger:4">Posts</h2>
+<ul data-animate style="--stagger:5">
   {#each data.posts as post}
     <li>
       <a href={post.path}>
@@ -43,8 +43,8 @@
   {/each}
 </ul>
 
-<h2 title="Social media">Me elsewhere</h2>
-<ul>
+<h2 title="Social media" data-animate style="--stagger:6">Me elsewhere</h2>
+<ul data-animate style="--stagger:7">
   <li>
     <a href="https://www.linkedin.com/in/villetalonpoika/" target="_blank">LinkedIn</a>
   </li>
