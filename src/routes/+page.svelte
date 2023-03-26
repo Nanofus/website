@@ -10,6 +10,7 @@
   <meta property="og:site_name" content="{config.siteTitle}" />
   <meta property="og:description" content={config.siteDescription} />
   <meta property="og:url" content={config.siteURL} />
+  <meta property="og:type" content="website" />
 </svelte:head>
 
 <p>I make things.</p>

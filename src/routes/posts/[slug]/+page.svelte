@@ -12,6 +12,7 @@
   <meta property="og:site_name" content="{config.siteTitle}" />
   <meta property="og:description" content="Test description" />
   <meta property="og:url" content={$page.url.href} />
+  <meta property="og:type" content="article" />
 </svelte:head>
 
 <article>
