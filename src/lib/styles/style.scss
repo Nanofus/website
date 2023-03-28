@@ -7,7 +7,8 @@
   --link-dark: #81d4fa;
   --selection: #ffff00;
   --font: 'Nunito Sans';
-  --font-weight: 400
+  --font-weight: 400;
+  --header-font-weight: 300;
 }
 
 :where(h2, h3, h4, h5, h6) {
@@ -17,9 +18,7 @@
     &::before {
       content: '#';
       position: absolute;
-      left: -1.5ch;
-      top: 0.25rem;
-      line-height: 1;
+      left: -1ch;
       opacity: 0;
       text-decoration: underline;
     }
@@ -65,7 +64,8 @@ body {
 }
 
 code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.9rem;
 }
 
 main {
@@ -74,10 +74,14 @@ main {
 }
 
 header {
+  h1 {
+    font-size: 1.6rem;
+  }
   a, a:link, a:visited {
     color: var(--text-light);
     text-decoration: none;
   }
+  margin-top: 5rem;
 }
 
 footer {
@@ -92,17 +96,17 @@ h1, h2, h3 {
 
 h1 {
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: var(--header-font-weight);
 }
 
 h2 {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: var(--header-font-weight);
 }
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: var(--header-font-weight);
 }
 
 a:link,
