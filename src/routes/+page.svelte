@@ -18,7 +18,7 @@
 <h2 title="Projects" data-animate style="--stagger:2">My things</h2>
 <ul data-animate style="--stagger:2">
   <li>
-    <a href="https://perikoto.com" target="blank">Perikoto</a>
+    <a href="https://store.steampowered.com/app/1570490/Perikoto/" target="blank">Perikoto</a>
     <div class="mouseover">A virtual reality adventure game for SteamVR devices</div>
   </li>
   <li>
