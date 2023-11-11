@@ -7,13 +7,10 @@ const config = defineConfig({
   smartypants: {
     quotes: true,
     ellipses: true,
-    dashes: 'oldschool',
+    dashes: 'oldschool'
   },
   remarkPlugins: [],
-  rehypePlugins: [
-    rehypeSlug,
-    rehypeAutolinkHeadings,
-  ],
+  rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
 });
 
 export default config;

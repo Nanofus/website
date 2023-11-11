@@ -1,25 +1,22 @@
-import { fetchMarkdownPosts } from "$lib/utils";
-import { config } from "$lib/config";
+import { fetchMarkdownPosts } from '$lib/utils';
+import { config } from '$lib/config';
+import type { RequestHandler } from '@sveltejs/kit';
 
 export const prerender = true;
 
-export const GET = async () => {
+export const GET: RequestHandler = async () => {
   const allPosts = await fetchMarkdownPosts();
-  // @ts-ignore
-  const sortedPosts = allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sortedPosts = allPosts.sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date));
 
   const body = render(sortedPosts);
   const options = {
     headers: {
-      "Cache-Control": "max-age=0, s-maxage=3600",
-      "Content-Type": "application/xml"
+      'Cache-Control': 'max-age=0, s-maxage=3600',
+      'Content-Type': 'application/xml'
     }
   };
 
-  return new Response(
-    body,
-    options
-  );
+  return new Response(body, options);
 };
 
 const render = (posts: any) => `
@@ -30,7 +27,9 @@ const render = (posts: any) => `
       <description>${config.siteDescription}</description>
       <link>${config.siteURL}</link>
       <atom:link href="${config.siteURL}/rss.xml" rel="self" type="application/rss+xml"/>
-      ${posts.map((post: any) => `
+      ${posts
+        .map(
+          (post: any) => `
       <item>
         <guid isPermaLink="true">${config.siteURL}${post.path}</guid>
         <title>${post.meta.title}</title>
@@ -38,7 +37,9 @@ const render = (posts: any) => `
         <description>${post.meta.title}</description>
         <pubDate>${new Date(post.meta.date).toUTCString()}</pubDate>
       </item>
-      `).join("")}
+      `
+        )
+        .join('')}
     </channel>
   </rss>
 `;

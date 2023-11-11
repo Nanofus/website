@@ -1,7 +1,7 @@
-import { error } from "@sveltejs/kit";
+import { error } from '@sveltejs/kit';
+import type { Load } from '@sveltejs/kit';
 
-// @ts-ignore
-export async function load({ params }) {
+export const load: Load = async ({ params }) => {
   try {
     const post = await import(`../${params.slug}.md`);
     const { title, date } = post.metadata;
@@ -13,6 +13,6 @@ export async function load({ params }) {
       date
     };
   } catch (e) {
-    throw error(404, "Not Found");
+    throw error(404, 'Not Found');
   }
-}
+};
