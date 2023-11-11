@@ -3,7 +3,7 @@ title: Test post in markdown
 date: '2023-04-25'
 ---
 
-Hey all! This is a test post generated from markdown with mdsvex. In the future I might write some actual content here.
+Hey all! This is a test post generated from markdown with mdsvex. In the future I might write some actual content here. Perhaps one day...
 
 Here's some Svelte code that should be syntax highlighted:
 ```js
