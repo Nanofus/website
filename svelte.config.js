@@ -1,6 +1,5 @@
 import mdsvexConfig from "./mdsvex.config.js";
 import adapter from "@sveltejs/adapter-static";
-import { vitePreprocess } from "@sveltejs/kit/vite";
 import { mdsvex } from "mdsvex";
 import autoprefixer from "autoprefixer";
 import { sveltePreprocess } from "svelte-preprocess/dist/autoProcess.js";
@@ -21,9 +20,6 @@ const config = {
   ],
 
   kit: {
-    // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-    // If your environment is not supported or you settled on a specific environment, switch out the adapter.
-    // See https://kit.svelte.dev/docs/adapters for more information uses adapters.
     adapter: adapter()
   }
 };

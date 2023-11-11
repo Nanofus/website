@@ -6,10 +6,8 @@
   import "$lib/styles/prism-atom-dark.css";
   import { fade, fly } from "svelte/transition";
   import { browser } from "$app/environment";
-  import { onMount } from "svelte";
 
   export let data;
-  export let el;
 
   $: if (browser) {
     preloadCode("/posts", "/posts/*");
