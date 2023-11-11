@@ -3,14 +3,13 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import '$lib/styles/style.scss';
-  import '$lib/styles/prism-atom-dark.css';
+  import '$lib/styles/code.css';
   import { fade, fly } from 'svelte/transition';
   import { browser } from '$app/environment';
 
   export let data;
-
   $: if (browser) {
-    preloadCode('/posts', '/posts/*');
+      preloadCode('/posts', '/posts/*');
   }
 </script>
 

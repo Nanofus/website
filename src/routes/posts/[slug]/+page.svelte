@@ -16,6 +16,6 @@
 
 <article>
   <h1>{data.title}</h1>
-  <p>Published {data.date}</p>
+  <p class="data">{data.date}</p>
   <svelte:component this={data.content} />
 </article>

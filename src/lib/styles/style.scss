@@ -1,12 +1,14 @@
 :root {
-  --text-light: #222;
-  --text-dark: #fff;
-  --background-light: #fff;
-  --background-dark: #222;
-  --link-light: #1976d2;
-  --link-dark: #81d4fa;
-  --selection: #ffff00;
-  --font: 'Nunito Sans';
+  --text-light: #575279;
+  --text-dark: #e0def4;
+  --background-light: #fffaf3;
+  --background-dark: #1f1d2e;
+  --link-light: #56949f;
+  --link-dark: #31748f;
+  --selection-light: #ea9d34;
+  --selection-dark: #f6c177;
+  --font: 'Lato';
+  --header-font: 'Vollkorn';
   --font-weight: 400;
   --header-font-weight: 300;
 }
@@ -76,8 +78,17 @@ main {
   margin-bottom: 3rem;
 }
 
+article {
+  .data {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+}
+
 header {
   h1 {
+    text-align: left;
     font-size: 1.6rem;
   }
   a,
@@ -95,13 +106,14 @@ footer {
   bottom: 1rem;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3, h4 {
+  font-family: var(--header-font);
+  font-style: italic;
   color: var(--text-light);
 }
 
 h1 {
+  text-align: center;
   font-size: 2rem;
   font-weight: var(--header-font-weight);
 }
@@ -127,7 +139,7 @@ a:hover {
 }
 
 ::selection {
-  background: var(--selection);
+  background: var(--selection-light);
 }
 
 li {
@@ -165,6 +177,11 @@ li:hover .mouseover {
       color: var(--text-dark);
     }
   }
+  article {
+    .data {
+        color: var(--text-light);
+    }
+  }
   h1,
   h2,
   h3 {
@@ -178,7 +195,7 @@ li:hover .mouseover {
     color: var(--link-dark);
   }
   ::selection {
-    color: var(--text-light);
+    color: var(--selection-dark);
   }
 }
 
