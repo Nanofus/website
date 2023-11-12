@@ -3,8 +3,8 @@
 code[class*='language-'],
 pre[class*='language-'] {
   color: #cdd6f4;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: "JetBrains Mono", Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+  font-family: var(--code-font);
+  font-size: var(--code-font-size);
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -13,7 +13,6 @@ pre[class*='language-'] {
   line-height: 1.5;
 
   -moz-tab-size: 2;
-  -o-tab-size: 2;
   tab-size: 2;
 
   -webkit-hyphens: none;

@@ -1,7 +1,9 @@
 <script>
   import { config } from '$lib/config';
+  
+  export let front = false;
 </script>
 
-<header>
+<header id={front ? "main-header" : ""}>
   <h1><a href="/">{config.siteTitle}</a></h1>
 </header>

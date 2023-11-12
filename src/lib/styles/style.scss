@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital@0;1&family=Inter&family=JetBrains+Mono:ital@0;1&family=Vollkorn:ital@0;1&display=swap');
+
 :root {
+  /* Colors */
   --text-light: #575279;
   --text-dark: #e0def4;
   --background-light: #fffaf3;
@@ -7,10 +10,22 @@
   --link-dark: #31748f;
   --selection-light: #ea9d34;
   --selection-dark: #f6c177;
-  --font: 'Lato';
-  --header-font: 'Vollkorn';
+
+  /* Fonts */
+  --font: 'Inter', -apple-system, sans-serif;
+  --header-font: 'Alegreya', 'EB Garamond', serif;
+  --code-font: 'JetBrains Mono', monospace;
   --font-weight: 400;
-  --header-font-weight: 300;
+  --header-font-weight: 400;
+  --font-size: 1rem;
+  --minor-font-size: 0.8rem;
+  --code-font-size: 0.9rem;
+  --header-font-size: 1.6rem;
+  --navigation-font-size: 1.2rem;
+  --main-header-font-size: 2.4rem;
+  
+  /* Layout */
+  --content-width: 50ch;
 }
 
 :where(h2, h3, h4, h5, h6) {
@@ -20,7 +35,7 @@
     &::before {
       content: '#';
       position: absolute;
-      left: -1ch;
+      left: -1.5ch;
       opacity: 0;
       text-decoration: underline;
     }
@@ -56,29 +71,23 @@
 }
 
 body {
-  font-family:
-    var(--font),
-    -apple-system,
-    sans-serif;
+  font-family: var(--font);
   font-weight: var(--font-weight);
-  font-size: 1rem;
+  font-size: var(--font-size);
   background-color: var(--background-light);
   color: var(--text-light);
-  margin: auto;
-  max-width: 50ch;
-}
-
-code {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.9rem;
 }
 
 main {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  #front-page {
+    margin-left: 5rem;
+  }
 }
 
 article {
+  margin: 3rem auto;
+  max-width: var(--content-width);
+
   .data {
     text-align: center;
     font-size: 0.8rem;
@@ -89,21 +98,37 @@ article {
 header {
   h1 {
     text-align: left;
-    font-size: 1.6rem;
+    font-size: var(--navigation-font-size);
   }
+
+  &#main-header {
+    h1 {
+      font-size: var(--main-header-font-size);
+    }
+  }
+  &:not(#main-header) {
+    margin: 3rem auto;
+    max-width: var(--content-width);
+  }
+
   a,
   a:link,
   a:visited {
     color: var(--text-light);
     text-decoration: none;
   }
+
   margin-top: 5rem;
+  margin-left: 5rem;
 }
 
 footer {
-  font-size: 0.8rem;
+  font-size: var(--minor-font-size);
   position: fixed;
   bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
 }
 
 h1, h2, h3, h4 {
@@ -153,16 +178,16 @@ li .mouseover {
   position: absolute;
   top: 0;
   left: 10rem;
-}
-
-li:hover .mouseover {
-  visibility: visible;
 
   &::before {
     position: absolute;
     left: -1rem;
     content: '<';
   }
+}
+
+li:hover .mouseover {
+  visibility: visible;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -179,7 +204,7 @@ li:hover .mouseover {
   }
   article {
     .data {
-        color: var(--text-light);
+      color: var(--text-light);
     }
   }
   h1,
@@ -204,7 +229,10 @@ li:hover .mouseover {
     margin-left: 2rem;
     margin-right: 2rem;
   }
+  header {
+    margin-left: 0;
+  }
   li {
-    line-height: 2rem;
+    line-height: 1.6rem;
   }
 }
