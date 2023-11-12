@@ -28,6 +28,12 @@
   --content-width: 50ch;
 }
 
+[data-animate] {
+  --stagger: 0;
+  --delay: 120ms;
+  --start: 0ms;
+}
+
 :where(h2, h3, h4, h5, h6) {
   .icon-link {
     position: relative;
@@ -44,12 +50,6 @@
   &:hover .icon-link::before {
     opacity: 1;
   }
-}
-
-[data-animate] {
-  --stagger: 0;
-  --delay: 120ms;
-  --start: 0ms;
 }
 
 @media (prefers-reduced-motion: no-preference) {
