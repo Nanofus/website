@@ -41,9 +41,9 @@
     &::before {
       content: '#';
       position: absolute;
-      left: -1.5ch;
+      left: -2ch;
       opacity: 0;
-      text-decoration: underline;
+      transition: opacity 0.3s ease-in-out;
     }
   }
 

@@ -29,6 +29,10 @@
       <div class="mouseover">I make video games with a business name from Kalevala</div>
     </li>
     <li>
+      <a href="https://github.com/Nanofus/nuva" target="_blank">Nuva</a>
+      <div class="mouseover">SvelteKit-based frontend for WordPress, tailored for interactive fiction</div>
+    </li>
+    <li>
       <a href="https://github.com/Nanofus/novel.js" target="_blank">Novel.js</a>
       <div class="mouseover">A text adventure engine for the web</div>
     </li>
