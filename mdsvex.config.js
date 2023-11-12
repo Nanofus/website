@@ -1,6 +1,7 @@
 import { defineMDSveXConfig as defineConfig } from 'mdsvex';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
+import rehypeExternalLinks from "rehype-external-links";
 
 const config = defineConfig({
   extensions: ['.svelte.md', '.md', '.svx'],
@@ -10,7 +11,7 @@ const config = defineConfig({
     dashes: 'oldschool'
   },
   remarkPlugins: [],
-  rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+  rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, [rehypeExternalLinks, {target: ['_blank']}]]
 });
 
 export default config;
