@@ -23,7 +23,7 @@
   --header-font-size: 1.6rem;
   --navigation-font-size: 1.2rem;
   --main-header-font-size: 2.4rem;
-  
+
   /* Layout */
   --content-width: 50ch;
 }
@@ -131,7 +131,10 @@ footer {
   text-align: center;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--header-font);
   font-style: italic;
   color: var(--text-light);

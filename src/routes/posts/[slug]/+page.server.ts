@@ -1,10 +1,11 @@
 import { error } from '@sveltejs/kit';
 import type { Load } from '@sveltejs/kit';
-import {contentToPost} from "$lib/utils";
+import { fetchMarkdownPost } from '$lib/utils';
 
 export const load: Load = async ({ params }) => {
   try {
-    const post = await contentToPost((await import(`../${params.slug}.md?raw`)).default);
+    if (!params.slug) throw error(404, 'Not Found');
+    const post = await fetchMarkdownPost(params.slug);
     const { title, date } = post.metadata;
     const content = post.content;
 

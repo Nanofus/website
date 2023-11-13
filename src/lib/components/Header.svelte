@@ -1,10 +1,10 @@
 <script>
-    import {config} from '$lib/config';
+  import { config } from '$lib/config';
 
-    export let front = false;
+  export let front = false;
 </script>
 
-<header id={front ? "main-header" : ""}>
+<header id={front ? 'main-header' : ''}>
   {#if front}
     <h1 data-animate>{config.siteTitle}</h1>
   {:else}

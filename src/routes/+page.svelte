@@ -1,17 +1,17 @@
 <script>
-    import {config} from '$lib/config';
-    import Header from "$lib/components/Header.svelte";
+  import { config } from '$lib/config';
+  import Header from '$lib/components/Header.svelte';
 
-    export let data;
+  export let data;
 </script>
 
 <svelte:head>
   <title>{config.siteTitle}</title>
-  <meta property="og:title" content={config.siteTitle}/>
-  <meta property="og:site_name" content={config.siteTitle}/>
-  <meta property="og:description" content={config.siteDescription}/>
-  <meta property="og:url" content={config.siteURL}/>
-  <meta property="og:type" content="website"/>
+  <meta property="og:title" content={config.siteTitle} />
+  <meta property="og:site_name" content={config.siteTitle} />
+  <meta property="og:description" content={config.siteDescription} />
+  <meta property="og:url" content={config.siteURL} />
+  <meta property="og:type" content="website" />
 </svelte:head>
 
 <Header front={true} />
@@ -30,7 +30,9 @@
     </li>
     <li>
       <a href="https://github.com/Nanofus/nuva" target="_blank">Nuva</a>
-      <div class="mouseover">SvelteKit-based frontend for WordPress, tailored for interactive fiction</div>
+      <div class="mouseover">
+        SvelteKit-based frontend for WordPress, tailored for interactive fiction
+      </div>
     </li>
     <li>
       <a href="https://github.com/Nanofus/novel.js" target="_blank">Novel.js</a>

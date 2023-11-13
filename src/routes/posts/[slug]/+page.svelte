@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores';
   import { config } from '$lib/config';
-  import Header from "$lib/components/Header.svelte";
+  import Header from '$lib/components/Header.svelte';
 
   export let data;
 </script>

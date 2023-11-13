@@ -6,7 +6,9 @@ export const prerender = true;
 
 export const GET: RequestHandler = async () => {
   const allPosts = await fetchMarkdownPosts();
-  const sortedPosts = allPosts.sort((a, b) => +new Date(b.metadata.date) - +new Date(a.metadata.date));
+  const sortedPosts = allPosts.sort(
+    (a, b) => +new Date(b.metadata.date) - +new Date(a.metadata.date)
+  );
 
   const body = render(sortedPosts);
   const options = {

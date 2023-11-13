@@ -9,7 +9,7 @@
 
   export let data;
   $: if (browser) {
-      preloadCode('/posts', '/posts/*');
+    preloadCode('/posts', '/posts/*');
   }
 </script>
 
