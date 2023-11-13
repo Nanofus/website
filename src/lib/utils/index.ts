@@ -4,6 +4,7 @@ import {matter} from 'vfile-matter';
 import remarkGfm from 'remark-gfm';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+// @ts-expect-error - no working types
 import remarkPrism from 'remark-prism';
 import {unified} from 'unified';
 
@@ -43,10 +44,8 @@ export const contentToPost = async (content: string): Promise<Post> => {
       .use(remarkRehype)
       .use(rehypeStringify)
       .process(content);
-  const post = {
+  return {
     metadata: result.data.matter,
     content: result.value.toString()
   }
-  console.log(post);
-  return post;
 }

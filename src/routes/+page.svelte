@@ -43,9 +43,9 @@
     {#each data.posts as post}
       <li>
         <a href={post.path}>
-          {post.meta.title}
+          {post.metadata.title}
         </a>
-        {post.meta.date}
+        {post.metadata.date}
       </li>
     {/each}
   </ul>
