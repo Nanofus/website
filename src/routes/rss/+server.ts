@@ -6,7 +6,7 @@ export const prerender = true;
 
 export const GET: RequestHandler = async () => {
   const allPosts = await fetchMarkdownPosts();
-  const sortedPosts = allPosts.sort((a, b) => +new Date(b.meta.date) - +new Date(a.meta.date));
+  const sortedPosts = allPosts.sort((a, b) => +new Date(b.metadata.date) - +new Date(a.metadata.date));
 
   const body = render(sortedPosts);
   const options = {
@@ -31,10 +31,10 @@ const render = (posts: any) => `<?xml version="1.0" encoding="UTF-8" ?>
           (post: any) => `
       <item>
         <guid isPermaLink="true">${config.siteURL}${post.path}</guid>
-        <title>${post.meta.title}</title>
+        <title>${post.metadata.title}</title>
         <link>${config.siteURL}${post.path}</link>
-        <description>${post.meta.title}</description>
-        <pubDate>${new Date(post.meta.date).toUTCString()}</pubDate>
+        <description>${post.metadata.title}</description>
+        <pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
       </item>
       `
         )

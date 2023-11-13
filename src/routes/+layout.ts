@@ -1,7 +1,8 @@
+import type { Load } from '@sveltejs/kit';
+
 export const prerender = true;
 
-// @ts-ignore
-export const load = ({ url }) => {
+export const load: Load = ({ url }) => {
   const currentRoute = url.pathname;
 
   return {
