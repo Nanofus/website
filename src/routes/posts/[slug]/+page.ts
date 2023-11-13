@@ -1,11 +1,12 @@
 import { error } from '@sveltejs/kit';
 import type { Load } from '@sveltejs/kit';
+import {contentToPost} from "$lib/utils";
 
 export const load: Load = async ({ params }) => {
   try {
-    const post = await import(`../${params.slug}.md`);
+    const post = await contentToPost((await import(`../${params.slug}.md?raw`)).default);
     const { title, date } = post.metadata;
-    const content = post.default;
+    const content = post.content;
 
     return {
       content,

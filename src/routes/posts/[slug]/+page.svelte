@@ -19,5 +19,5 @@
 <article>
   <h1>{data.title}</h1>
   <p class="data">{data.date}</p>
-  <svelte:component this={data.content} />
+  {@html data.content}
 </article>
