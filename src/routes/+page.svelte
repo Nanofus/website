@@ -1,62 +1,40 @@
 <script>
   import { config } from '$lib/config';
-  import Header from '$lib/components/Header.svelte';
 
   export let data;
 </script>
 
 <svelte:head>
   <title>{config.siteTitle}</title>
-  <meta property="og:title" content={config.siteTitle} />
-  <meta property="og:site_name" content={config.siteTitle} />
-  <meta property="og:description" content={config.siteDescription} />
-  <meta property="og:url" content={config.siteURL} />
-  <meta property="og:type" content="website" />
+  <meta content={config.siteTitle} property="og:title" />
+  <meta content={config.siteTitle} property="og:site_name" />
+  <meta content={config.siteDescription} property="og:description" />
+  <meta content={config.siteURL} property="og:url" />
+  <meta content="website" property="og:type" />
 </svelte:head>
 
-<Header front={true} />
-<div id="front-page">
+<main>
+  <h1 data-animate>{config.siteTitle}</h1>
   <p data-animate style="--stagger:1">I make things.</p>
+  <p data-animate style="--stagger:2">
+    <a href="/posts">Writing</a> /
+    <a href="/projects">Projects</a> /
+    <a href="https://www.linkedin.com/in/villetalonpoika/" target="_blank">LinkedIn</a> /
+    <a href="https://github.com/Nanofus" target="blank">GitHub</a>
+  </p>
+</main>
 
-  <h2 title="Projects" data-animate style="--stagger:2">My things</h2>
-  <ul data-animate style="--stagger:2">
-    <li>
-      <a href="https://store.steampowered.com/app/1570490/Perikoto/" target="blank">Perikoto</a>
-      <div class="mouseover">A virtual reality adventure game for SteamVR devices</div>
-    </li>
-    <li>
-      <a href="https://ikuturso.fi" target="blank">Ikuturso</a>
-      <div class="mouseover">I make video games with a business name from Kalevala</div>
-    </li>
-    <li>
-      <a href="https://github.com/Nanofus/nuva" target="_blank">Nuva</a>
-      <div class="mouseover">
-        SvelteKit-based frontend for WordPress, tailored for interactive fiction
-      </div>
-    </li>
-    <li>
-      <a href="https://github.com/Nanofus/novel.js" target="_blank">Novel.js</a>
-      <div class="mouseover">A text adventure engine for the web</div>
-    </li>
-  </ul>
+<style lang="scss">
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  <h2 title="Posts" data-animate style="--stagger:3">Posts</h2>
-  <ul data-animate style="--stagger:3">
-    {#each data.posts as post}
-      <li>
-        <a href={post.path}>
-          {post.metadata.title}
-        </a>
-        {post.metadata.date}
-      </li>
-    {/each}
-  </ul>
+    h1 {
+      font-size: 4rem;
+    }
+  }
 
-  <h2 title="Social media" data-animate style="--stagger:4">Me elsewhere</h2>
-  <ul data-animate style="--stagger:4">
-    <li>
-      <a href="https://www.linkedin.com/in/villetalonpoika/" target="_blank">LinkedIn</a>
-    </li>
-    <li><a href="https://github.com/Nanofus" target="blank">GitHub</a></li>
-  </ul>
-</div>
+  @media only screen and (max-width: 600px) {
+  }
+</style>

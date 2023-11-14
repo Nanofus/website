@@ -40,8 +40,14 @@ export const fetchMarkdownPosts = async () => {
 };
 
 export const fetchMarkdownPost = async (slug: string) => {
-  console.log(slug);
-  return contentToPost((await import(`../${slug}.md?raw`)).default);
+  return contentToPost(
+    (
+      await import(
+        /* @vite-ignore */
+        `/src/routes/posts/${slug}.md?raw`
+      )
+    ).default
+  );
 };
 
 export const contentToPost = async (content: string): Promise<Post> => {
@@ -60,7 +66,7 @@ export const contentToPost = async (content: string): Promise<Post> => {
     .use(rehypeSlug)
     .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] })
     .use(rehypeAutolinkHeadings)
-    .process(content)
+    .process(content);
   return {
     metadata: result.data.matter,
     content: result.value.toString()

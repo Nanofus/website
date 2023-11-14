@@ -3,7 +3,8 @@ title: Test post in markdown
 date: '2023-04-25'
 ---
 
-Hey all! This is a test post generated from markdown with mdsvex. In the future I might write some actual content here. Perhaps one day...[^1]
+Hey all! This is a test post generated from markdown with mdsvex. In the future I might write some actual content here.
+Perhaps one day...[^1]
 
 This link goes to Google: [Google](https://google.com)
 
@@ -14,6 +15,14 @@ This link goes to Google: [Google](https://google.com)
 - ~~Strikethrough~~
 
 Here's some Svelte code that should be syntax highlighted:[^2]
+
+Here's some blockquoting:
+
+> Testi
+> Aaa
+> Ööö
+>
+> Jee
 
 ```js
 import { preloadCode } from '$app/navigation';
