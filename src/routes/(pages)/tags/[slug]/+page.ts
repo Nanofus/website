@@ -2,7 +2,7 @@ import type { Load } from '@sveltejs/kit';
 
 export const prerender = true;
 
-export const load: Load = async ({ params }) => {
+export const load: Load = async ({ fetch, params }) => {
   const response = await fetch(`/api/tags/${params.slug}`);
   const posts = await response.json();
   
