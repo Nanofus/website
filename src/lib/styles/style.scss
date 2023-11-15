@@ -98,6 +98,7 @@ a {
     color: var(--link-light);
     text-decoration: none;
   }
+
   &:hover {
     text-decoration: underline;
   }
@@ -107,8 +108,33 @@ a {
   background: var(--selection-light);
 }
 
-li {
-  list-style-type: '> ';
+ul {
+  padding: 0;
+
+  li {
+    list-style-type: '– ';
+    line-height: 1.8rem;
+  }
+}
+
+ol {
+  padding: 0;
+
+  li {
+    list-style-type: decimal;
+    line-height: 1.8rem;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+blockquote {
+  margin-left: 0;
+  font-style: italic;
+  border-left: 1px solid var(--text-light);
+  padding-left: 0.6rem;
 }
 
 /* Post subheaders (does not work inside Svelte component) */
@@ -158,6 +184,9 @@ li {
   a:link,
   a:visited {
     color: var(--link-dark);
+  }
+  blockquote {
+    border-left-color: var(--text-dark);
   }
   ::selection {
     color: var(--selection-dark);

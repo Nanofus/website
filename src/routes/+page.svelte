@@ -15,8 +15,7 @@
 
 <main>
   <h1 data-animate>{config.siteTitle}</h1>
-  <p data-animate style="--stagger:1">I make things.</p>
-  <p data-animate style="--stagger:2">
+  <p data-animate style="--stagger:1">
     <a href="/posts">Writing</a> /
     <a href="/projects">Projects</a> /
     <a href="https://www.linkedin.com/in/villetalonpoika/" target="_blank">LinkedIn</a> /
@@ -32,6 +31,17 @@
 
     h1 {
       font-size: 4rem;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--text-light);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      a {
+        color: var(--text-dark);
+      }
     }
   }
 

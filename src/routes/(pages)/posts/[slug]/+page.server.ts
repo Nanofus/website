@@ -5,13 +5,10 @@ import { fetchMarkdownPost } from '$lib/utils';
 export const load: Load = async ({ params }) => {
   try {
     const post = await fetchMarkdownPost(params.slug as string);
-    const { title, date } = post.metadata;
-    const content = post.content;
 
     return {
-      content,
-      title,
-      date
+      metadata: post.metadata,
+      content: post.content,
     };
   } catch (e) {
     throw error(404, 'Not Found');

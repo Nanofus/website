@@ -1,6 +1,7 @@
 ---
 title: Test post in markdown
 date: '2023-04-25'
+tags: ['test', 'markdown']
 ---
 
 Hey all! This is a test post generated from markdown with mdsvex. In the future I might write some actual content here.
