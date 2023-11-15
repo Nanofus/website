@@ -9,7 +9,7 @@
     <title>{config.siteTitle} – {data.metadata.title}</title>
     <meta content={data.metadata.title} property="og:title"/>
     <meta content={config.siteTitle} property="og:site_name"/>
-    <meta content="Test description" property="og:description"/>
+    <meta content={config.siteDescription} property="og:description"/>
     <meta content={$page.url.href} property="og:url"/>
     <meta content="article" property="og:type"/>
 </svelte:head>

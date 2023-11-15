@@ -44,17 +44,6 @@ export const fetchMarkdownPostsByTag = async (tag: string) => {
   return posts.filter((post) => post.metadata.tags.includes(tag));
 }
 
-export const fetchMarkdownPost = async (slug: string) => {
-  return contentToPost(
-    (
-      await import(
-        /* @vite-ignore */
-        `/src/routes/posts/${slug}.md?raw`
-      )
-    ).default
-  );
-};
-
 export const contentToPost = async (content: string): Promise<Post> => {
   const result = await unified()
     .use(remarkParse)

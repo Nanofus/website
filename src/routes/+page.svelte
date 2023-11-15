@@ -1,7 +1,5 @@
 <script>
   import { config } from '$lib/config';
-
-  export let data;
 </script>
 
 <svelte:head>
