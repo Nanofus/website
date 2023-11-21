@@ -13,9 +13,10 @@
 
 <main>
   <h1 data-animate>{config.siteTitle}</h1>
-  <p data-animate style="--stagger:1">
+  <p data-animate style="--stagger:1">Developer and consultant, running a gaming startup on the side.</p>
+  <p data-animate style="--stagger:2">
     <a href="/posts">Writing</a> /
-    <a href="/projects">Projects</a> /
+    <a href="/projects">Portfolio</a> /
     <a href="https://www.linkedin.com/in/villetalonpoika/" target="_blank">LinkedIn</a> /
     <a href="https://github.com/Nanofus" target="blank">GitHub</a>
   </p>

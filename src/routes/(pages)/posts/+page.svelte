@@ -13,10 +13,10 @@
   <meta content="website" property="og:type" />
 </svelte:head>
 
-<h1>My writings</h1>
+<h1 data-animate>My writings</h1>
 <ul>
-  {#each data.posts as post}
-    <li>
+  {#each data.posts as post, i}
+    <li data-animate style="--stagger:{i+1}">
       <a href={post.path}>
         {post.metadata.title}
       </a>
