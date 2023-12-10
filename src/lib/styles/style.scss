@@ -7,7 +7,9 @@
 :root {
   /* Colors */
   --text-light: #575279;
+  --text-light-dim: #9893a5;
   --text-dark: #e0def4;
+  --text-dark-dim: #6e6a86;
   --background-light: #fffaf3;
   --background-dark: #1f1d2e;
   --link-light: #56949f;
@@ -173,7 +175,7 @@ blockquote {
   }
   article {
     .data {
-      color: var(--text-light);
+      color: var(--text-dark-dim);
     }
   }
   h1,
