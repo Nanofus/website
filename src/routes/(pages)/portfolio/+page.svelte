@@ -7,7 +7,7 @@
   <meta content="Projects" property="og:title" />
   <meta content={config.siteTitle} property="og:site_name" />
   <meta content={config.siteDescription} property="og:description" />
-  <meta content="{config.siteURL}/projects" property="og:url" />
+  <meta content="{config.siteURL}/portfolio" property="og:url" />
   <meta content="website" property="og:type" />
 </svelte:head>
 
