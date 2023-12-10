@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>{config.siteTitle} – Projects</title>
+  <title>{config.siteTitle} – Portfolio</title>
   <meta content="Projects" property="og:title" />
   <meta content={config.siteTitle} property="og:site_name" />
   <meta content={config.siteDescription} property="og:description" />
