@@ -35,6 +35,7 @@
   
   /* Animations */
   --transition-speed: 300ms;
+  --fade-in-speed: 600ms;
   --stagger-delay: 120ms;
 }
 
@@ -48,7 +49,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   [data-animate] {
-    animation: enter 0.6s both;
+    animation: enter var(--fade-in-speed) both;
     animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
   }
 }
