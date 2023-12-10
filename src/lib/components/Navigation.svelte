@@ -17,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem;
   }
 
   h1 {
@@ -30,17 +29,23 @@
 
     li {
       list-style-type: none;
-      margin: 1rem;
     }
   }
 
   a {
     color: var(--text-light);
+    padding: 1rem;
   }
 
   @media (prefers-color-scheme: dark) {
     a {
       color: var(--text-dark);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 > a {
+      padding-left: 0;
     }
   }
 </style>
