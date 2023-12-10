@@ -53,7 +53,7 @@ export const contentToPost = async (content: string): Promise<Post> => {
     .use(remarkPrism)
     .use(
       //@ts-expect-error - no working types
-      remarkSmartypants
+      remarkSmartypants, { quotes: false, backticks: false }
     )
     .use(remarkRehype)
     .use(rehypeStringify)
