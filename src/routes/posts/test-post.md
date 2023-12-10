@@ -6,3 +6,9 @@ tags: ['test', 'post', 'test-post', 'test-post-2']
 ---
 
 Hey! This post exists here so that the static build doesn't fail.
+
+> This is a test quote.
+>
+> Here's another line.
+
+Here we go again with the normal text.

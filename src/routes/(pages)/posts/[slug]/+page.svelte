@@ -1,17 +1,17 @@
 <script>
-    import {page} from '$app/stores';
-    import {config} from '$lib/config';
+  import { page } from '$app/stores';
+  import { config } from '$lib/config';
 
-    export let data;
+  export let data;
 </script>
 
 <svelte:head>
   <title>{config.siteTitle} – {data.metadata.title}</title>
-  <meta content={data.metadata.title} property="og:title"/>
-  <meta content={config.siteTitle} property="og:site_name"/>
-  <meta content={config.siteDescription} property="og:description"/>
-  <meta content={$page.url.href} property="og:url"/>
-  <meta content="article" property="og:type"/>
+  <meta content={data.metadata.title} property="og:title" />
+  <meta content={config.siteTitle} property="og:site_name" />
+  <meta content={config.siteDescription} property="og:description" />
+  <meta content={$page.url.href} property="og:url" />
+  <meta content="article" property="og:type" />
 </svelte:head>
 
 <h1 class="post-title">{data.metadata.title}</h1>
@@ -57,7 +57,7 @@
     &::before {
       content: '#';
     }
-    
+
     &:not(:last-child) {
       &::after {
         content: ' ';

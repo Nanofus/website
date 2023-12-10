@@ -26,15 +26,15 @@ export const fetchMarkdownPosts = async () => {
   const allPostFiles = import.meta.glob('/src/routes/posts/*.md', { as: 'raw', eager: true });
   const iterablePostFiles = Object.entries(allPostFiles);
   const posts = await Promise.all(
-      iterablePostFiles.map(async ([filePath, content]) => {
-        const metadata: any = (await contentToPost(content)).metadata;
-        const path = filePath.slice(11, -3);
+    iterablePostFiles.map(async ([filePath, content]) => {
+      const metadata: any = (await contentToPost(content)).metadata;
+      const path = filePath.slice(11, -3);
 
-        return {
-          metadata,
-          path
-        };
-      })
+      return {
+        metadata,
+        path
+      };
+    })
   );
   return posts.sort((a, b) => +new Date(b.metadata.date) - +new Date(a.metadata.date));
 };
@@ -42,7 +42,7 @@ export const fetchMarkdownPosts = async () => {
 export const fetchMarkdownPostsByTag = async (tag: string) => {
   const posts = await fetchMarkdownPosts();
   return posts.filter((post) => post.metadata.tags.includes(tag));
-}
+};
 
 export const contentToPost = async (content: string): Promise<Post> => {
   const result = await unified()

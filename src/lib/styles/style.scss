@@ -32,13 +32,17 @@
 
   /* Layout */
   --content-width: 50ch;
+  
+  /* Animations */
+  --transition-speed: 300ms;
+  --stagger-delay: 120ms;
 }
 
 /* Animations */
 
 [data-animate] {
   --stagger: 0;
-  --delay: 120ms;
+  --delay: var(--stagger-delay);
   --start: 0ms;
 }
 
@@ -70,6 +74,8 @@ body {
   color: var(--text-light);
   margin-left: 2rem;
   margin-right: 2rem;
+  
+  transition: background-color var(--transition-speed) ease-in-out, color var(--transition-speed) ease-in-out;
 }
 
 h1,
@@ -133,10 +139,15 @@ ol {
 }
 
 blockquote {
-  margin-left: 0;
+  hanging-punctuation: first allow-end last;
   font-style: italic;
-  border-left: 1px solid var(--text-light);
-  padding-left: 0.6rem;
+  margin: 0;
+  > p:first-child::before {
+    content: open-quote;
+  }
+  > p:last-child::after {
+    content: close-quote;
+  }
 }
 
 /* Post subheaders (does not work inside Svelte component) */
@@ -186,9 +197,6 @@ blockquote {
   a:link,
   a:visited {
     color: var(--link-dark);
-  }
-  blockquote {
-    border-left-color: var(--text-dark);
   }
   ::selection {
     color: var(--selection-dark);
