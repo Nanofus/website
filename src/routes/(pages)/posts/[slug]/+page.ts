@@ -8,6 +8,6 @@ export const load: Load = async ({ fetch, params }) => {
     const response = await fetch(`/api/post/${params.slug as string}`);
     return await response.json();
   } catch (e) {
-    throw error(404, 'Not Found');
+    error(404, 'Not Found');
   }
 };
