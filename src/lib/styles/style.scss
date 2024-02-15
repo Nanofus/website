@@ -6,19 +6,19 @@
 
 :root {
   /* Colors */
-  --text-light: #575279;
-  --text-light-dim: #9893a5;
-  --text-dark: #e0def4;
-  --text-dark-dim: #6e6a86;
+  --text-light: #252525;
+  --text-light-dim: #252525;
+  --text-dark: #e2e1da;
+  --text-dark-dim: #d4d2c4;
   --background-light: #fffaf3;
-  --background-dark: #1f1d2e;
-  --link-light: #56949f;
-  --link-dark: #31748f;
+  --background-dark: #0b0b0b;
+  --link-hover-light: #ea9d34;
+  --link-hover-dark: #ce7800;
   --selection-light: #ea9d34;
-  --selection-dark: #f6c177;
+  --selection-dark: #ce7800;
 
   /* Fonts */
-  --font: 'Inter', BlinkMacSystemFont, -apple-system, sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   --header-font: 'Alegreya', 'EB Garamond', serif;
   --code-font: 'MonoLisa', 'JetBrains Mono', monospace;
   --font-weight: 400;
@@ -32,7 +32,7 @@
 
   /* Layout */
   --content-width: 50ch;
-  
+
   /* Animations */
   --transition-speed: 300ms;
   --fade-in-speed: 600ms;
@@ -75,8 +75,10 @@ body {
   color: var(--text-light);
   margin-left: 2rem;
   margin-right: 2rem;
-  
-  transition: background-color var(--transition-speed) ease-in-out, color var(--transition-speed) ease-in-out;
+
+  transition:
+    background-color var(--transition-speed) ease-in-out,
+    color var(--transition-speed) ease-in-out;
 }
 
 h1,
@@ -84,7 +86,6 @@ h2,
 h3,
 h4 {
   font-family: var(--header-font);
-  font-style: italic;
   font-weight: var(--header-font-weight);
   color: var(--text-light);
 }
@@ -102,19 +103,21 @@ h3 {
 }
 
 a {
+  color: var(--text-light);
+  text-decoration: none;
+
   &:link,
   &:visited {
-    color: var(--link-light);
-    text-decoration: none;
   }
 
   &:hover {
-    text-decoration: underline;
+    color: var(--link-hover-light);
   }
 }
 
 ::selection {
-  background: var(--selection-light);
+  color: var(--background-light);
+  background: var(--text-light);
 }
 
 ul {
@@ -197,10 +200,14 @@ blockquote {
   }
   a:link,
   a:visited {
-    color: var(--link-dark);
+    color: var(--text-dark);
+    &:hover {
+      color: var(--link-hover-dark);
+    }
   }
   ::selection {
-    color: var(--selection-dark);
+    color: var(--background-dark);
+    background: var(--text-dark);
   }
 }
 

@@ -35,11 +35,19 @@
   a {
     color: var(--text-light);
     padding: 1rem;
+
+    &:hover {
+      color: var(--link-hover-light);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     a {
       color: var(--text-dark);
+
+      &:hover {
+        color: var(--link-hover-dark);
+      }
     }
   }
 

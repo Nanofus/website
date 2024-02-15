@@ -1,7 +1,7 @@
 ---
 title: Test post
 date: '2023-11-15'
-updated: ['2023-11-16', '2023-11-17']
+updated: ['2023-11-17']
 tags: ['test', 'post', 'test-post', 'test-post-2']
 ---
 

@@ -12,22 +12,17 @@ import rehypeSlug from 'rehype-slug';
 import remarkPrism from 'remark-prism';
 import { unified } from 'unified';
 
-export type PostMeta = {
-  metadata: any;
-  path: string;
-};
-
 export type Post = {
   metadata: any;
   content: string;
 };
 
 export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob('/src/routes/posts/*.md', { as: 'raw', eager: true });
+  const allPostFiles = import.meta.glob('/src/routes/posts/*.md', { query: '?raw', eager: true });
   const iterablePostFiles = Object.entries(allPostFiles);
   const posts = await Promise.all(
     iterablePostFiles.map(async ([filePath, content]) => {
-      const metadata: any = (await contentToPost(content)).metadata;
+      const metadata: any = (await contentToPost((content as any).default)).metadata;
       const path = filePath.slice(11, -3);
 
       return {
@@ -53,7 +48,8 @@ export const contentToPost = async (content: string): Promise<Post> => {
     .use(remarkPrism)
     .use(
       //@ts-expect-error - no working types
-      remarkSmartypants, { quotes: false, backticks: false }
+      remarkSmartypants,
+      { quotes: false, backticks: false }
     )
     .use(remarkRehype)
     .use(rehypeStringify)

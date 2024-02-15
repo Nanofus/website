@@ -16,8 +16,7 @@
 
 <h1 class="post-title">{data.metadata.title}</h1>
 <div class="metadata">
-  <p class="date">published {data.metadata.date}</p>
-  <p class="updated">updated {data.metadata.updated.join(', ')}</p>
+  <p class="date">{data.metadata.date}</p>
   <p class="tags">
     {#each data.metadata.tags as tag}
       <a href="/tags/{tag}" class="data">{tag}</a>
@@ -25,6 +24,9 @@
   </p>
 </div>
 {@html data.content}
+<div class="metadata">
+  <p class="updated">updated {data.metadata.updated.join(', ')}</p>
+</div>
 <div class="fleuron">
   <span>❦</span>
 </div>
@@ -35,15 +37,14 @@
   }
 
   .metadata {
-    text-align: center;
     font-size: 0.8rem;
     color: var(--text-light-dim);
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 
     > p {
       margin: 0 0 0.5rem 0;
+
       &:not(:last-child) {
         &::after {
           margin: 0 0.5rem 0 0.5rem;
@@ -65,6 +66,10 @@
     }
 
     color: var(--text-light-dim);
+
+    &:hover {
+      color: var(--link-hover-light);
+    }
   }
 
   .fleuron {
@@ -82,6 +87,16 @@
     .fleuron {
       span {
         color: var(--text-dark-dim);
+      }
+    }
+    .metadata {
+      color: var(--text-dark-dim);
+    }
+    .tags a {
+      color: var(--text-dark-dim);
+
+      &:hover {
+        color: var(--link-hover-dark);
       }
     }
   }

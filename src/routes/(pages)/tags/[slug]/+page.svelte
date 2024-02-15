@@ -13,7 +13,7 @@
   <meta content="website" property="og:type" />
 </svelte:head>
 
-<h1>Tag: #{data.slug}</h1>
+<h1>#{data.slug}</h1>
 <ul>
   {#each data.posts as post}
     <li>

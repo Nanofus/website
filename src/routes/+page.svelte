@@ -45,6 +45,9 @@
 
     a {
       color: var(--text-light);
+      &:hover {
+        color: var(--link-hover-light);
+      }
     }
 
     .link-list {
@@ -62,6 +65,9 @@
     @media (prefers-color-scheme: dark) {
       a {
         color: var(--text-dark);
+        &:hover {
+          color: var(--link-hover-dark);
+        }
       }
     }
   }
