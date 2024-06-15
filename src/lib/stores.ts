@@ -9,4 +9,4 @@ if (browser) {
 
 export const darkMode = writable(!!prefersDarkMode?.matches);
 
-prefersDarkMode?.addListener((e: any) => darkMode.set(!!e.matches));
+prefersDarkMode?.addListener((e) => darkMode.set(!!e.matches));

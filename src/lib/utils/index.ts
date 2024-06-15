@@ -46,11 +46,7 @@ export const contentToPost = async (content: string): Promise<Post> => {
     .use(() => (tree, file) => matter(file))
     .use(remarkGfm)
     .use(remarkPrism)
-    .use(
-      //@ts-expect-error - no working types
-      remarkSmartypants,
-      { quotes: false, backticks: false }
-    )
+    .use(remarkSmartypants, { quotes: false, backticks: false })
     .use(remarkRehype)
     .use(rehypeStringify)
     .use(rehypeSlug)

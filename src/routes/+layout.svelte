@@ -6,7 +6,8 @@
   import { browser } from '$app/environment';
   import { darkMode } from '$lib/stores';
 
-  let lightBackground: string, darkBackground: string;
+  let lightBackground: string;
+  let darkBackground: string;
 
   $: if (browser) {
     preloadCode('/portfolio');
