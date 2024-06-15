@@ -9,7 +9,9 @@
   let lightBackground: string, darkBackground: string;
 
   $: if (browser) {
-    preloadCode('/portfolio', '/posts', '/posts/*');
+    preloadCode('/portfolio');
+    preloadCode('/posts');
+    preloadCode('/posts/*');
     lightBackground = getComputedStyle(document.body).getPropertyValue('--background-light');
     darkBackground = getComputedStyle(document.body).getPropertyValue('--background-dark');
   }
