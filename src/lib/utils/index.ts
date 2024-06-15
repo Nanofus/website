@@ -14,10 +14,11 @@ import { unified } from 'unified';
 
 export type Post = {
   metadata: any;
-  content: string;
+  content?: string;
+  path?: string;
 };
 
-export const fetchMarkdownPosts = async () => {
+export const fetchMarkdownPosts = async (): Promise<Post[]> => {
   const allPostFiles = import.meta.glob('/src/routes/posts/*.md', { query: '?raw', eager: true });
   const iterablePostFiles = Object.entries(allPostFiles);
   const posts = await Promise.all(
@@ -50,7 +51,7 @@ export const contentToPost = async (content: string): Promise<Post> => {
     .use(remarkRehype)
     .use(rehypeStringify)
     .use(rehypeSlug)
-    .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] })
+    .use(rehypeExternalLinks, { target: '_blank' })
     .use(rehypeAutolinkHeadings)
     .process(content);
   return {

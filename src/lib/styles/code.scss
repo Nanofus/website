@@ -3,7 +3,7 @@
 code[class*='language-'],
 pre[class*='language-'] {
   color: #cdd6f4;
-  font-family: var(--code-font);
+  font-family: var(--code-font), monospace;
   font-size: var(--code-font-size);
   direction: ltr;
   text-align: left;

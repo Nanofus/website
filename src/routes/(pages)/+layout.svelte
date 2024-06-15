@@ -1,7 +1,7 @@
 <script>
   import '$lib/styles/style.scss';
   import '$lib/styles/code.scss';
-  import { fade, fly } from 'svelte/transition';
+  import { blur, fly } from 'svelte/transition';
   import Navigation from '$lib/components/Navigation.svelte';
 
   export let data;
@@ -9,7 +9,7 @@
 
 <Navigation />
 {#key data.currentRoute}
-  <article in:fly={{ y: 10, duration: 120, delay: 120 }} out:fade={{ duration: 120 }}>
+  <article in:fly={{ y: 10, duration: 120, delay: 120 }} out:blur={{ duration: 120 }}>
     <slot />
   </article>
 {/key}

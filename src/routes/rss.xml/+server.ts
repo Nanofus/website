@@ -1,4 +1,4 @@
-import { fetchMarkdownPosts } from '$lib/utils';
+import { fetchMarkdownPosts, type Post } from '$lib/utils';
 import { config } from '$lib/config';
 import type { RequestHandler } from '@sveltejs/kit';
 
@@ -21,7 +21,7 @@ export const GET: RequestHandler = async () => {
   return new Response(body, options);
 };
 
-const render = (posts: any) => `<?xml version="1.0" encoding="UTF-8" ?>
+const render = (posts: Post[]) => `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>${config.siteTitle}</title>
@@ -30,7 +30,7 @@ const render = (posts: any) => `<?xml version="1.0" encoding="UTF-8" ?>
       <atom:link href="${config.siteURL}/rss.xml" rel="self" type="application/rss+xml"/>
       ${posts
         .map(
-          (post: any) => `
+          (post: Post) => `
       <item>
         <guid isPermaLink="true">${config.siteURL}${post.path}</guid>
         <title>${post.metadata.title}</title>

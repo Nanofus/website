@@ -11,7 +11,7 @@
   --text-dark: #e2e1da;
   --text-dark-dim: #d4d2c4;
   --background-light: #fffaf3;
-  --background-dark: #0b0b0b;
+  --background-dark: #055A5B;
   --link-hover-light: #ea9d34;
   --link-hover-dark: #ce7800;
   --selection-light: #ea9d34;
@@ -21,7 +21,7 @@
   --font: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   --header-font: 'Alegreya', 'EB Garamond', serif;
   --code-font: 'MonoLisa', 'JetBrains Mono', monospace;
-  --prose-font: 'Spectral', sans-serif;
+  --prose-font: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   --font-weight: 400;
   --header-font-weight: 400;
   --font-size: 1rem;
@@ -69,7 +69,7 @@
 /* Body */
 
 body {
-  font-family: var(--font);
+  font-family: var(--font), sans-serif;
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   background-color: var(--background-light);
@@ -86,7 +86,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--header-font);
+  font-family: var(--header-font), serif;
   font-weight: var(--header-font-weight);
   color: var(--text-light);
 }
@@ -104,7 +104,7 @@ h3 {
 }
 
 article > p {
-  font-family: var(--prose-font);
+  font-family: var(--prose-font), sans-serif;
 }
 
 a {
