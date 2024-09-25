@@ -1,0 +1,67 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Bio from "../../components/Bio.astro";
+import getPostData from "../../utils/getPostData";
+import { getCollection, getEntry } from "astro:content";
+import formatDate from "../../utils/formatDate";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("writing");
+	return posts.map((p) => ({
+		params: { slug: p.slug },
+		props: { post: p },
+	}));
+}
+
+console.log(Astro.props);
+const { data } = Astro.props.post;
+const entry = await getEntry("writing", Astro.props.post.slug);
+const { Content, headings } = await entry.render();
+const { title, description, pubDate } = data;
+const { slug, readingTime } = getPostData(Astro.props.post);
+const permalink = `${Astro.site!.href}writing/${slug}`;
+---
+
+<BaseLayout
+	title={title}
+	description={description || ""}
+	permalink={permalink}
+	current="writing"
+>
+	<div class="content-container">
+		<header>
+			<h1>{title}</h1>
+			<p>{formatDate(pubDate)} / {readingTime}</p>
+		</header>
+		<article>
+			<Content />
+		</article>
+		<Bio />
+	</div>
+</BaseLayout>
+
+<style>
+	article:after {
+		position: relative;
+		display: inline-block;
+		text-align: center;
+		left: 50%;
+		font-size: 1.4rem;
+		transform: translateX(-50%);
+		content: "🍂";
+	}
+
+	header {
+		text-align: center;
+	}
+
+	header h1 {
+		font-size: 2.5rem;
+		margin: 1rem 0 0;
+	}
+
+	header p {
+		color: var(--text-secondary);
+		font-family: var(--font-family-sans), sans-serif;
+	}
+</style>

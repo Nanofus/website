@@ -1,0 +1,43 @@
+{
+	"name": "website",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "bunx --bun astro dev",
+		"start": "bunx --bun astro dev",
+		"build": "bunx --bun astro check && astro build",
+		"preview": "bunx --bun astro preview",
+		"astro": "bunx --bun astro",
+		"lint": "eslint . && prettier --write ."
+	},
+	"type": "module",
+	"dependencies": {
+		"@astrojs/check": "^0.9.3",
+		"@astrojs/mdx": "^4.0.0-beta.1",
+		"@astrojs/rss": "^4.0.7",
+		"@astrojs/svelte": "^6.0.0-beta.0",
+		"@astrojs/ts-plugin": "^1.10.2",
+		"@threlte/core": "^7.3.1",
+		"@threlte/extras": "^8.11.5",
+		"astro": "^5.0.0-beta.2",
+		"reading-time": "^1.5.0",
+		"rehype-external-links": "^3.0.0",
+		"remark-gfm": "^4.0.0",
+		"remark-smartypants": "^3.0.2",
+		"svelte": "^4.2.19",
+		"three": "^0.168.0",
+		"typescript": "^5.6.2"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.1.10",
+		"@types/eslint-config-prettier": "^6.11.3",
+		"@types/three": "^0.168.0",
+		"@typescript-eslint/parser": "^8.7.0",
+		"eslint": "^9.11.1",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-astro": "^1.2.4",
+		"eslint-plugin-svelte": "^2.44.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1"
+	}
+}

@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import formatDate from "../../utils/formatDate";
+
+const title = "Writing";
+const description = "Latest stuff I've published";
+const permalink = `${Astro.site!.href}writing`;
+
+let allPosts = await getCollection("writing");
+console.log(allPosts);
+allPosts = allPosts.sort(
+	(a, b) =>
+		new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
+);
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	permalink={permalink}
+	current="writing"
+>
+	<div class="content-container">
+		<h1>{title}</h1>
+		<ul>
+			{
+				allPosts.map((post, index) => {
+					const href = `/writing/${post.slug}`;
+					return (
+						<li>
+							<a href={href}>{post.data.title}</a>
+							<span class="post-item-date">
+								{formatDate(post.data.pubDate)}
+							</span>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</div>
+</BaseLayout>
+
+<style>
+	.post-item-date {
+		color: var(--text-secondary);
+	}
+</style>

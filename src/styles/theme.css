@@ -1,0 +1,18 @@
+:root {
+	--font-family-serif: Bitter, serif;
+	--font-family-sans: Inter, -apple-system, BlinkMacSystemFont, system-ui,
+		sans-serif;
+	--background-body: #dcd7ba;
+	--text-primary: #16161d;
+	--text-secondary: #727169;
+	--accent-color: #ffa066;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	:root {
+		--background-body: #16161d;
+		--text-primary: #dcd7ba;
+		--text-secondary: #727169;
+		--accent-color: #ffa066;
+	}
+}
