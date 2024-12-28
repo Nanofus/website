@@ -10,6 +10,24 @@ export interface Props {
 	current?: string;
 }
 const { title, description, permalink, current } = Astro.props;
+
+const blurAnimation = {
+	old: {
+		name: "blur",
+		duration: "0.2s",
+		easing: "ease-in",
+		direction: "reverse",
+	},
+	new: {
+		name: "blur",
+		duration: "0.2s",
+		easing: "ease-in-out",
+	},
+};
+const blurTransition = {
+	forwards: blurAnimation,
+	backwards: blurAnimation,
+};
 ---
 
 <html lang="en">
@@ -19,7 +37,7 @@ const { title, description, permalink, current } = Astro.props;
 	<body>
 		<Header current={current} />
 
-		<main>
+		<main transition:animate={blurTransition}>
 			<slot />
 		</main>
 
