@@ -8,7 +8,8 @@
 		"build": "bunx --bun astro check && astro build",
 		"preview": "bunx --bun astro preview",
 		"astro": "bunx --bun astro",
-		"lint": "eslint . && prettier --write ."
+		"lint": "eslint . && prettier --write .",
+		"generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/favicon.png"
 	},
 	"type": "module",
 	"dependencies": {
@@ -33,6 +34,7 @@
 		"@types/eslint-config-prettier": "^6.11.3",
 		"@types/three": "^0.171.0",
 		"@typescript-eslint/parser": "^8.18.2",
+		"@vite-pwa/assets-generator": "^0.2.6",
 		"eslint": "^9.17.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-astro": "^1.3.1",
