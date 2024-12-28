@@ -4,14 +4,15 @@
 		system-ui, sans-serif;
 
 	--base-light-color: #efdbc1;
+	--base-light-secondary-color: #736248;
 	--base-dark-color: #16161d;
+	--base-dark-secondary-color: #808093;
 	--base-accent-color: #ef5c02;
-	--base-secondary-color: #736248;
 
 	--background-body: var(--base-light-color);
 	--text-primary: var(--base-dark-color);
 	--accent-color: var(--base-accent-color);
-	--text-secondary: var(--base-secondary-color);
+	--text-secondary: var(--base-light-secondary-color);
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -19,6 +20,6 @@
 		--background-body: var(--base-dark-color);
 		--text-primary: var(--base-light-color);
 		--accent-color: var(--base-accent-color);
-		--text-secondary: var(--base-secondary-color);
+		--text-secondary: var(--base-dark-secondary-color);
 	}
 }
