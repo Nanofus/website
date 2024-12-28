@@ -13,10 +13,9 @@ export async function getStaticPaths() {
 	}));
 }
 
-console.log(Astro.props);
 const { data } = Astro.props.post;
 const entry = await getEntry("writing", Astro.props.post.slug);
-const { Content, headings } = await entry.render();
+const { Content, headings } = await entry!.render();
 const { title, description, pubDate } = data;
 const { slug, readingTime } = getPostData(Astro.props.post);
 const permalink = `${Astro.site!.href}writing/${slug}`;

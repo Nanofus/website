@@ -8,7 +8,6 @@ const description = "Latest stuff I've published";
 const permalink = `${Astro.site!.href}writing`;
 
 let allPosts = await getCollection("writing");
-console.log(allPosts);
 allPosts = allPosts.sort(
 	(a, b) =>
 		new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),

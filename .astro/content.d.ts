@@ -4,6 +4,7 @@ declare module 'astro:content' {
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
 			remarkPluginFrontmatter: Record<string, any>;
+			components: import('astro').MDXInstance<{}>['components'];
 		}>;
 	}
 }
@@ -102,7 +103,9 @@ declare module 'astro:content' {
 		collection: C,
 		id: E,
 	): E extends keyof DataEntryMap[C]
-		? Promise<DataEntryMap[C][E]>
+		? string extends keyof DataEntryMap[C]
+			? Promise<DataEntryMap[C][E]> | undefined
+			: Promise<DataEntryMap[C][E]>
 		: Promise<CollectionEntry<C> | undefined>;
 
 	/** Resolve an array of entry references from the same collection */
@@ -150,23 +153,24 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"writing": {
-"initial-commit.md": {
-	id: "initial-commit.md";
-  slug: "initial-commit";
-  body: string;
-  collection: "writing";
-  data: InferEntrySchema<"writing">
-} & { render(): Render[".md"] };
-};
-
+		
 	};
 
 	type DataEntryMap = {
-		
+		"writing": Record<string, {
+  id: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
+  collection: "writing";
+  data: InferEntrySchema<"writing">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("../src/content/config.js");
 }
