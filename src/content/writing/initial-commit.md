@@ -1,6 +1,7 @@
 ---
 title: Initial commit
 pubDate: 2024-09-22
+index: 0
 ---
 
 Recently, I've been reading quite a few interesting tech and non-tech blogs I've stumbled upon on, and, like many do, got the itch to start my own online plot of land to lay open my projects and writings on.

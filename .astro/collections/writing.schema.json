@@ -23,6 +23,9 @@
             }
           ]
         },
+        "index": {
+          "type": "number"
+        },
         "description": {
           "type": "string"
         },
@@ -41,7 +44,8 @@
       },
       "required": [
         "title",
-        "pubDate"
+        "pubDate",
+        "index"
       ],
       "additionalProperties": false
     }
