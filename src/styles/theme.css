@@ -1,18 +1,24 @@
 :root {
-	--font-family-serif: Bitter, serif;
-	--font-family-sans: Inter, -apple-system, BlinkMacSystemFont, system-ui,
-		sans-serif;
-	--background-body: #dcd7ba;
-	--text-primary: #16161d;
-	--text-secondary: #727169;
-	--accent-color: #ffa066;
+	--font-family-serif: "EB Garamond", serif;
+	--font-family-sans: "Nunito Sans", -apple-system, BlinkMacSystemFont,
+		system-ui, sans-serif;
+
+	--base-light-color: #efdbc1;
+	--base-dark-color: #16161d;
+	--base-accent-color: #ef5c02;
+	--base-secondary-color: #736248;
+
+	--background-body: var(--base-light-color);
+	--text-primary: var(--base-dark-color);
+	--accent-color: var(--base-accent-color);
+	--text-secondary: var(--base-secondary-color);
 }
 
 @media screen and (prefers-color-scheme: dark) {
 	:root {
-		--background-body: #16161d;
-		--text-primary: #dcd7ba;
-		--text-secondary: #727169;
-		--accent-color: #ffa066;
+		--background-body: var(--base-dark-color);
+		--text-primary: var(--base-light-color);
+		--accent-color: var(--base-accent-color);
+		--text-secondary: var(--base-secondary-color);
 	}
 }

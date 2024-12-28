@@ -40,6 +40,10 @@ const permalink = `${Astro.site!.href}writing/${slug}`;
 </BaseLayout>
 
 <style>
+	article {
+		font-family: var(--font-family-serif), serif;
+	}
+
 	article:after {
 		position: relative;
 		display: inline-block;
@@ -61,6 +65,6 @@ const permalink = `${Astro.site!.href}writing/${slug}`;
 
 	header p {
 		color: var(--text-secondary);
-		font-family: var(--font-family-sans), sans-serif;
+		font-family: var(--font-family-serif), serif;
 	}
 </style>

@@ -1,32 +1,32 @@
 <script lang="ts">
-  import {T, useTask} from '@threlte/core';
-  import {interactivity} from '@threlte/extras';
-  import {spring} from 'svelte/motion';
+	import { T, useTask } from "@threlte/core";
+	import { interactivity } from "@threlte/extras";
+	import { spring } from "svelte/motion";
 
-  interactivity();
-  const scale = spring(1);
-  let rotation = $state(0);
-  useTask((delta) => {
-    rotation += delta * 0.2;
-  });
+	interactivity();
+	const scale = spring(1);
+	let rotation = $state(0);
+	useTask((delta) => {
+		rotation += delta * 0.2;
+	});
 </script>
 
 <T.PerspectiveCamera
-        makeDefault
-        position={[10, 10, 10]}
-        oncreate={(ref) => {
-          ref.lookAt(0, 1, 0)
-        }}
+	makeDefault
+	position={[10, 10, 10]}
+	oncreate={(ref) => {
+		ref.lookAt(0, 1, 0);
+	}}
 />
-<T.DirectionalLight position={[0, 10, 10]}/>
-<T.AmbientLight intensity={0.4}/>
+<T.DirectionalLight position={[0, 10, 10]} />
+<T.AmbientLight intensity={0.4} />
 <T.Mesh
-        rotation.y={rotation}
-        position.y={1}
-        scale={$scale}
-        onpointerenter={() => scale.set(1.1)}
-        onpointerleave={() => scale.set(1)}
+	rotation.y={rotation}
+	position.y={1}
+	scale={$scale}
+	onpointerenter={() => scale.set(1.1)}
+	onpointerleave={() => scale.set(1)}
 >
-    <T.BoxGeometry args={[3, 3, 3]}/>
-    <T.MeshStandardMaterial color="#7AA89F"/>
+	<T.BoxGeometry args={[3, 3, 3]} />
+	<T.MeshStandardMaterial color="#7AA89F" />
 </T.Mesh>

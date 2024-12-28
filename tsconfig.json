@@ -1,37 +1,25 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ],
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@assets/*": [
-        "public/assets/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ]
-    }
-  },
-  "extends": "astro/tsconfigs/strict"
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"baseUrl": ".",
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@assets/*": ["public/assets/*"],
+			"@utils/*": ["src/utils/*"],
+			"@pages/*": ["src/pages/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@styles/*": ["src/styles/*"]
+		}
+	},
+	"extends": "astro/tsconfigs/strict"
 }
