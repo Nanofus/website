@@ -184,19 +184,6 @@ td {
     width: 100%;
 }
 
-@keyframes blur {
-    0% {
-        filter: blur(12px);
-        -webkit-filter: blur(12px);
-        opacity: 0;
-    }
-    100% {
-        filter: blur(0px);
-        -webkit-filter: blur(0px);
-        opacity: 1;
-    }
-}
-
 @media (max-width: 1020px) {
     h1 {
         font-size: 2.5rem;

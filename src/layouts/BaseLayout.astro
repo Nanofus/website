@@ -62,4 +62,17 @@ const blurTransition = {
 		display: flex;
 		flex-direction: column;
 	}
+
+	@keyframes blur {
+		0% {
+			filter: blur(12px);
+			-webkit-filter: blur(12px);
+			opacity: 0;
+		}
+		100% {
+			filter: blur(0px);
+			-webkit-filter: blur(0px);
+			opacity: 1;
+		}
+	}
 </style>
