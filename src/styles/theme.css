@@ -2,27 +2,9 @@
 	--font-family-serif: "EB Garamond", serif;
 	--font-family-sans: "Nunito Sans", -apple-system, BlinkMacSystemFont,
 		system-ui, sans-serif;
-
-	--base-light-color: #efdbc1;
-	--base-light-secondary-color: #736248;
-	--base-dark-color: #16161d;
-	--base-dark-secondary-color: #808093;
-	--base-accent-color: #ef5c02;
-	--base-accent-color-subtle: #772e01;
-
-	--background-body: var(--base-light-color);
-	--text-primary: var(--base-dark-color);
-	--accent-color: var(--base-accent-color);
-	--accent-color-subtle: var(--base-accent-color-subtle);
-	--text-secondary: var(--base-light-secondary-color);
-}
-
-@media screen and (prefers-color-scheme: dark) {
-	:root {
-		--background-body: var(--base-dark-color);
-		--text-primary: var(--base-light-color);
-		--accent-color: var(--base-accent-color);
-		--accent-color-subtle: var(--base-accent-color-subtle);
-		--text-secondary: var(--base-dark-secondary-color);
-	}
+	--font-family-mono: "MonoLisa", Inconsolata, monospace;
+	
+	--base-light-color: #BED9DA;
+	--base-dark-color: #053161;
+	--base-accent-color: #FF6A34;
 }

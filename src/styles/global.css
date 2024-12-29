@@ -17,13 +17,32 @@ html {
     box-sizing: border-box;
 }
 
+:root {
+    --background-color: var(--base-light-color);
+    --text-color: var(--base-dark-color);
+    --text-on-accent-color: var(--base-dark-color);
+    --accent-color: var(--base-accent-color);
+    --subtler: brightness(0.5) saturate(0.3);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--base-dark-color);
+        --text-color: var(--base-light-color);
+        --text-on-accent-color: var(--base-dark-color);
+        --accent-color: var(--base-accent-color);
+        --subtler: brightness(5) saturate(0.3);
+    }
+}
+
+
 body {
     margin: 0;
     font-family: var(--font-family-sans), sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    background-color: var(--background-body);
-    color: var(--text-primary);
+    background-color: var(--background-color);
+    color: var(--text-color);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -73,8 +92,8 @@ ol {
     margin: 1.2rem 0;
 }
 
-ol,
-ul {
+ul,
+ol {
     padding-left: 2rem;
     -webkit-padding-start: 5%;
     -webkit-padding-end: 5%;
@@ -110,7 +129,7 @@ img {
 }
 
 code {
-    font-family: "MonoLisa", inconsolata, monospace;
+    font-family: var(--font-family-mono), monospace;
     padding: 0.2rem 0.4rem;
     border-radius: 0.2rem;
 }
@@ -126,7 +145,7 @@ pre code {
 }
 
 blockquote {
-    border-left: 2px solid #cccccc;
+    border-left: 2px solid var(--accent-color);
     font-size: 1.4rem;
     font-style: italic;
     margin: 2rem 0;
@@ -153,6 +172,10 @@ figure {
     margin: 0 0 3rem 0;
 }
 
+iframe {
+    border: none;
+}
+
 ul {
     padding: 0;
 }
@@ -170,7 +193,7 @@ table {
 }
 
 th {
-    border-bottom: 2px solid #cccccc;
+    border-bottom: 2px solid var(--accent-color);
     padding: 0.4rem 0.8rem;
 }
 

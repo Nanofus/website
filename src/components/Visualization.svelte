@@ -2,6 +2,7 @@
 	import { T, useTask } from "@threlte/core";
 	import { interactivity } from "@threlte/extras";
 	import { spring } from "svelte/motion";
+	import {getCSSColor} from "@utils/getCSSColor.ts";
 
 	interactivity();
 	const scale = spring(1);
@@ -9,6 +10,8 @@
 	useTask((delta) => {
 		rotation += delta * 0.2;
 	});
+	
+	const color = getCSSColor('--accent-color');
 </script>
 
 <T.PerspectiveCamera
@@ -18,8 +21,8 @@
 		ref.lookAt(0, 1, 0);
 	}}
 />
-<T.DirectionalLight position={[0, 10, 10]} />
-<T.AmbientLight intensity={0.4} />
+<T.DirectionalLight intensity={1} position={[0, 10, 10]} />
+<T.AmbientLight intensity={1} />
 <T.Mesh
 	rotation.y={rotation}
 	position.y={1}
@@ -27,6 +30,6 @@
 	onpointerenter={() => scale.set(1.1)}
 	onpointerleave={() => scale.set(1)}
 >
-	<T.BoxGeometry args={[3, 3, 3]} />
-	<T.MeshStandardMaterial color="#7AA89F" />
+	<T.BoxGeometry args={[5, 5, 5]} />
+	<T.MeshStandardMaterial {color} />
 </T.Mesh>

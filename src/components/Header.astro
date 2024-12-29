@@ -12,6 +12,9 @@ const { current = "" } = Astro.props;
 			<span>{FAVICON} {SITE_TITLE}</span>
 		</a>
 		<span class="filler"></span>
+		<a class={current === "creations" ? "selected" : ""} href="/creations"
+			>Creations</a
+		>
 		<a class={current === "writing" ? "selected" : ""} href="/writing"
 			>Writing</a
 		>
@@ -28,14 +31,16 @@ const { current = "" } = Astro.props;
 	}
 
 	#main-logo {
+		color: var(--text-on-accent-color);
 		background-color: var(--accent-color);
 		border-bottom-right-radius: 1rem;
 		border-top-right-radius: 1rem;
+		transition: filter 0.3s ease;
 	}
 
 	#main-logo:hover {
-		color: var(--text-primary);
-		background-color: var(--accent-color-subtle);
+		color: var(--text-on-accent-color);
+		filter: brightness(0.8);
 	}
 
 	nav {
@@ -61,6 +66,6 @@ const { current = "" } = Astro.props;
 	}
 
 	a:not(.selected) {
-		opacity: 0.7;
+		opacity: 0.8;
 	}
 </style>

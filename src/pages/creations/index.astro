@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const title = "Creations";
+const description = "Projects and other artifacts";
+const permalink = `${Astro.site!.href}creations`;
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+	permalink={permalink}
+	current="creations"
+>
+	<div class="content-container">
+		<h1>{title}</h1>
+		<iframe
+			src="https://store.steampowered.com/widget/1570490/"
+			width="646"
+			height="190"></iframe>
+	</div>
+</BaseLayout>
