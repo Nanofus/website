@@ -1,0 +1,15 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "src/consts";
+
+const permalink = Astro.site!.href;
+---
+
+<BaseLayout
+	title={SITE_TITLE}
+	description={SITE_DESCRIPTION}
+	permalink={permalink}
+>
+	<h1>500</h1>
+	<span>Calling occupants of interplanetary craft...</span>
+</BaseLayout>
