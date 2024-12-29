@@ -121,6 +121,7 @@ a:hover {
 
 p a {
     color: var(--accent-color);
+    text-shadow: var(--background-color) 0 0 6px;
 }
 
 img {
@@ -176,13 +177,12 @@ iframe {
     border: none;
 }
 
-ul {
-    padding: 0;
+div:has(iframe) {
+    overflow-x: scroll;
 }
 
-li::marker {
-    content: "> ";
-    display: inline-block;
+ul {
+    padding: 0;
 }
 
 table {
@@ -218,10 +218,6 @@ td {
 }
 
 @media (max-width: 480px) {
-    body {
-        font-size: 0.9rem;
-    }
-
     p,
     ul,
     ol {

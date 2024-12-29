@@ -12,7 +12,7 @@ export default defineConfig({
 	integrations: [AstroPWA(), mdx(), svelte()],
 	markdown: {
 		shikiConfig: {
-			theme: "rose-pine",
+			theme: "kanagawa-dragon",
 		},
 		remarkPlugins: [
 			remarkGfm,
