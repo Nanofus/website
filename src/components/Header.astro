@@ -40,7 +40,7 @@ const { current = "" } = Astro.props;
 
 	#main-logo:hover {
 		color: var(--text-on-accent-color);
-		filter: brightness(0.8);
+		filter: brightness(1);
 	}
 
 	nav {
@@ -66,6 +66,10 @@ const { current = "" } = Astro.props;
 	}
 
 	a:not(.selected) {
-		opacity: 0.8;
+		filter: brightness(0.8);
+	}
+
+	a:not(.selected):hover {
+		filter: brightness(1);
 	}
 </style>
