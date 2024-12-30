@@ -1,3 +1,3 @@
 export const SITE_TITLE = "Ville Talonpoika";
 export const SITE_DESCRIPTION =
-	"Web & game developer, working as a consultant.";
+	"Game & web full-stack developer, all-around creative, dungeon master. Working as a consultant.";
