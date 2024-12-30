@@ -14,11 +14,30 @@ const permalink = `${Astro.site!.href}creations`;
 >
 	<div class="content-container">
 		<h1>{title}</h1>
-		<div>
-			<iframe
-				src="https://store.steampowered.com/widget/1570490/"
-				width="646"
-				height="190"></iframe>
-		</div>
+		<article>
+			<div>
+				<h2>Perikoto</h2>
+				<p>
+					A VR horror adventure game, somewhat based on Finnish mythology.
+					Coming out on Steam soon.
+				</p>
+				<div>
+					<iframe
+						src="https://store.steampowered.com/widget/1570490/"
+						width="646"
+						height="190"></iframe>
+				</div>
+			</div>
+			<div>
+				<h2>Portfolio</h2>
+				<p>
+					This portfolio site is my playground for web technologies I'm
+					interested in. Currently running on Astro, Svelte and Three.js. <a
+						href="https://github.com/nanofus/portfolio"
+						target="_blank">Source</a
+					> can be found on GitHub.
+				</p>
+			</div>
+		</article>
 	</div>
 </BaseLayout>

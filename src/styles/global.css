@@ -203,6 +203,10 @@ td {
     width: 100%;
 }
 
+article {
+    font-family: var(--font-family-serif), serif;
+}
+
 @media (max-width: 1020px) {
     h1 {
         font-size: 2.5rem;
