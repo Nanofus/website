@@ -1,5 +1,5 @@
 ---
-import { FAVICON, SITE_TITLE } from "src/consts";
+import { SITE_TITLE } from "src/consts";
 
 const { current = "" } = Astro.props;
 ---
@@ -9,7 +9,7 @@ const { current = "" } = Astro.props;
 <header>
 	<nav>
 		<a id="main-logo" class={current === "" ? "selected" : ""} href="/">
-			<span>{FAVICON} {SITE_TITLE}</span>
+			<span><img src="favicon.png" alt="favicon" /> {SITE_TITLE}</span>
 		</a>
 		<span class="filler"></span>
 		<a class={current === "creations" ? "selected" : ""} href="/creations"
@@ -41,6 +41,10 @@ const { current = "" } = Astro.props;
 	#main-logo:hover {
 		color: var(--text-on-accent-color);
 		filter: brightness(1);
+	}
+
+	#main-logo img {
+		height: 1rem;
 	}
 
 	nav {
