@@ -181,10 +181,6 @@ div:has(iframe) {
     overflow-x: scroll;
 }
 
-ul {
-    padding: 0;
-}
-
 table {
     border-collapse: collapse;
     font-family: var(--font-family-sans), sans-serif;
