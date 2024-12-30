@@ -9,15 +9,15 @@ const { current = "" } = Astro.props;
 <header>
 	<nav>
 		<a id="main-logo" class={current === "" ? "selected" : ""} href="/">
-			<span><img src="favicon.png" alt="favicon" /> {SITE_TITLE}</span>
+			<span>{SITE_TITLE}</span>
 		</a>
 		<span class="filler"></span>
-		<a class={current === "creations" ? "selected" : ""} href="/creations"
-			>Creations</a
-		>
-		<a class={current === "writing" ? "selected" : ""} href="/writing"
-			>Writing</a
-		>
+		<a class={current === "creations" ? "selected" : ""} href="/creations">
+			Creations
+		</a>
+		<a class={current === "writing" ? "selected" : ""} href="/writing">
+			Writing
+		</a>
 	</nav>
 </header>
 
@@ -43,8 +43,12 @@ const { current = "" } = Astro.props;
 		filter: brightness(1);
 	}
 
-	#main-logo img {
-		height: 1rem;
+	#main-logo span {
+		background-image: url("/favicon.png");
+		background-position: left;
+		background-size: contain;
+		background-repeat: no-repeat;
+		padding-left: 1.8rem;
 	}
 
 	nav {
